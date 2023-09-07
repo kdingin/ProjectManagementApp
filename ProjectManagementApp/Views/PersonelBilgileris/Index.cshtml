@@ -1,0 +1,130 @@
+﻿@model IEnumerable<ProjectManagementApp.Models.Personel.PersonelBilgileri>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yetki)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TCNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departman)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gorev)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PozisyonAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedeniHal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YakinBilgisi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YakinTc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YakinAdSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YakinTel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IseGirisTarihi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yetki)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TCNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departman)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gorev)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PozisyonAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedeniHal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YakinBilgisi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YakinTc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YakinAdSoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YakinTel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogumTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IseGirisTarihi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PersonelBilgileriId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PersonelBilgileriId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PersonelBilgileriId })
+        </td>
+    </tr>
+}
+
+</table>
