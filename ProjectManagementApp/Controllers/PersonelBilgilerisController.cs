@@ -91,31 +91,41 @@ namespace ProjectManagementApp.Controllers
         }
 
         // GET: PersonelBilgileris/Delete/5
-        public ActionResult Delete(int? id)
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    PersonelBilgileri personelBilgileri = db.PersonelBilgileris.Find(id);
+        //    if (personelBilgileri == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(personelBilgileri);
+        //}
+
+        //// POST: PersonelBilgileris/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    PersonelBilgileri personelBilgileri = db.PersonelBilgileris.Find(id);
+        //    db.PersonelBilgileris.Remove(personelBilgileri);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
+        public ActionResult Delete(int? Id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PersonelBilgileri personelBilgileri = db.PersonelBilgileris.Find(id);
-            if (personelBilgileri == null)
+            if (Id==null||Id==0) 
             {
                 return HttpNotFound();
             }
-            return View(personelBilgileri);
-        }
-
-        // POST: PersonelBilgileris/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            PersonelBilgileri personelBilgileri = db.PersonelBilgileris.Find(id);
-            db.PersonelBilgileris.Remove(personelBilgileri);
+            var t = db.PersonelBilgileris.Find(Id);
+            db.PersonelBilgileris.Remove(t);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
